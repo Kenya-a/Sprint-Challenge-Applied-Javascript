@@ -4,6 +4,7 @@ class TabLink {
     this.tabElement = tabElement;
     
     // Get the `data-tab` value from this.tabElement and store it here
+    //maybe error here
     this.tabData = this.tabElement.dataset.tab; 
     
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
@@ -15,7 +16,7 @@ class TabLink {
       this.cards = document.querySelectorAll('.card');
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelectorAll(`.cards-container.card[data-tab = "${this.tabData}"]`);
+      this.cards = document.querySelectorAll(`.card[data-tab = "${this.tabData}"]`);
     }
    
 
@@ -29,21 +30,21 @@ class TabLink {
   selectTab(){
 
     // Select all elements with the .tab class on them
-     const tabs = document.querySelectorAll('.tabs .tab');
+     const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
     tabs.forEach(tab => {
-      tab.classList.remove('active-tab')
+      tab.classList.remove('.active-tab')
     })
 
     // Select all of the elements with the .card class on them
-     const cards =  document.querySelectorAll('.card-container .card');
+     const cards =  document.querySelectorAll('.card');
 
     // Iterate through the NodeList setting the display style each one to 'none'
-     cards.forEach(card => card.style.display = 'none')
+     cards.forEach(cardd => cardd.style.display = 'none')
     
     // Add a class of ".active-tab" to this.tabElement
-     this.tabElement.classList.add('active-tab');
+     this.tabElement.classList.add('.active-tab');
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
     this.cards.forEach(card => card.selectCard());
@@ -73,7 +74,7 @@ class TabCard {
 */
 // let tabs = document.querySelectorAll('.tab');
 // Array.from(tabs).forEach(tab => new TabCard(tab))
+//why tab card ;(
 
-
-let tabs = document.querySelectorAll('.tab').forEach( tab => new TabCard (tab));
+let tabs = document.querySelectorAll('.tab').forEach( tab => new TabLink (tab));
 
