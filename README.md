@@ -31,21 +31,22 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
-
+    The DOM allows programs to dynamically update the content, style of the webpage.
 2. What is an event?
-
+    An event are the actions that happen in a programming system. For example the clicking a button on the webpage.
 3. What is an event listener?
-
+    An event listener is a function that will be called when a specified event is delivered to a target.
 4. Why would we convert a NodeList into an Array?
-
+    We would convert a NodeList into an Array to use ES6 format.
 5. What is a component?
+    A component is a re-usable set of behaviors.
 
 ### Git Set up
 
-* [ ] Fork the project into your GitHub user account
-* [ ] Clone the forked project into a directory on your machine
-* [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-* [ ] You are now ready to build this project with your preferred IDE
+* [] Fork the project into your GitHub user account
+* [] Clone the forked project into a directory on your machine
+* [] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
+* [] You are now ready to build this project with your preferred IDE
 
 ## Minimum Viable Product
 
