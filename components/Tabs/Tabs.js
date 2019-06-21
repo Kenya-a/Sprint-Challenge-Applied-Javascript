@@ -15,7 +15,7 @@ class TabLink {
       this.cards = document.querySelectorAll('.card');
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      this.cards = document.querySelectorAll(`card[data-tab = '${this.tabData}']`);
+      this.cards = document.querySelectorAll(`.cards-container.card[data-tab = "${this.tabData}"]`);
     }
    
 
@@ -23,19 +23,21 @@ class TabLink {
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
 
     // Add a click event that invokes this.selectTab
-     this.tabElement.addEventListener('click', () => this.selectTab());
+     this.tabElement.addEventListener('click', () => {this.selectTab()});
   }
 
   selectTab(){
 
     // Select all elements with the .tab class on them
-     const tabs = document.querySelectorAll('.tab');
+     const tabs = document.querySelectorAll('.tabs .tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
-    tabs.forEach(tab => tab.classList.remove('active-tab'))
+    tabs.forEach(tab => {
+      tab.classList.remove('active-tab')
+    })
 
     // Select all of the elements with the .card class on them
-     const cards =  document.querySelectorAll('.card');
+     const cards =  document.querySelectorAll('.card-container .card');
 
     // Iterate through the NodeList setting the display style each one to 'none'
      cards.forEach(card => card.style.display = 'none')
@@ -70,7 +72,8 @@ class TabCard {
 
 */
 // let tabs = document.querySelectorAll('.tab');
-// Array.from(tabs).forEach(el => new TabCard(el))
+// Array.from(tabs).forEach(tab => new TabCard(tab))
 
 
-let tabs = document.querySelectorAll('.tab').forEach( link => new TabCard (link))
+let tabs = document.querySelectorAll('.tab').forEach( tab => new TabCard (tab));
+
